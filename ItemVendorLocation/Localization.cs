@@ -33,6 +33,13 @@ namespace ItemVendorLocation
                     }
                 }
                 """,
+                ClientLanguage.Korean => /*lang=json,strict*/ """
+                {
+                    "ContextMenuItem": {
+                        "message": "판매 위치"
+                    }
+                }
+                """,
                 ClientLanguage.English or _ => /*lang=json,strict*/ """
                 {
                     "ContextMenuItem": {
@@ -43,14 +50,14 @@ namespace ItemVendorLocation
             };
 
             // this signature only exists in chinese client
-            if (Service.SigScanner.ScanText("48 8D 15 ?? ?? ?? ?? 33 F6 44 89 4C 24") != nint.Zero)
-                localizationJson = /*lang=json,strict*/ """
-                {
-                    "ContextMenuItem": {
-                        "message": "查找兑换位置"
-                    }
-                }
-                """;
+            //if (Service.SigScanner.ScanText("48 8D 15 ?? ?? ?? ?? 33 F6 44 89 4C 24") != nint.Zero)
+            //    localizationJson = /*lang=json,strict*/ """
+            //    {
+            //        "ContextMenuItem": {
+            //            "message": "查找兑换位置"
+            //        }
+            //    }
+            //    """;
 
             Loc.Setup(localizationJson);
         }
